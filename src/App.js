@@ -1,5 +1,11 @@
+import CounterApp from "./CounterApp/CounterApp";
+
 function App() {
-	return <h1>hola mundo</h1>;
+	return (
+		<div>
+			<CounterApp />
+		</div>
+	);
 }
 
 export default App;
