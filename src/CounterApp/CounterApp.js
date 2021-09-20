@@ -6,6 +6,13 @@ const types = {
 	RESET: "RESET",
 };
 
+const initialState = 0;
+
+// Mutador del estado inicial
+const init = (value) => {
+	return value + 1;
+};
+
 /**
  *
  * recibe el previo estado y retorna el nuev estado
@@ -17,14 +24,14 @@ const reducer = (state, action) => {
 		case types.DECREMENT:
 			return state - 1;
 		case types.RESET:
-			return 0;
+			return init(initialState);
 		default:
 			return state;
 	}
 };
 
 const CounterApp = () => {
-	const [counter, counterDispatch] = useReducer(reducer, 0);
+	const [counter, counterDispatch] = useReducer(reducer, initialState, init);
 	return (
 		<div>
 			<h1>Clicks: {counter}</h1>
